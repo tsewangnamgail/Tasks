@@ -1,0 +1,175 @@
+/* =========================
+   RESET & BASE STYLES
+   ========================= */
+   *,
+   *::before,
+   *::after {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+   }
+   
+   body {
+     min-height: 100vh;
+     display: grid;
+     place-items: center;
+     background: linear-gradient(135deg, #0b0b16, #15152b);
+     font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+     color: #ffffff;
+   }
+   
+   /* =========================
+      PLAYER CARD
+      ========================= */
+   .player {
+     width: 340px;
+     background: #1c1c2e;
+     border-radius: 26px;
+     padding: 24px;
+     display: flex;
+     flex-direction: column;
+     gap: 22px;
+     box-shadow:
+       0 30px 60px rgba(0, 0, 0, 0.6),
+       inset 0 1px 0 rgba(255, 255, 255, 0.04);
+   }
+   
+   /* =========================
+      ALBUM ART
+      ========================= */
+   .album-art {
+     width: 100%;
+     aspect-ratio: 1 / 1;
+     border-radius: 20px;
+     background: linear-gradient(135deg, #6a5cff, #9f8cff);
+     box-shadow: 0 20px 40px rgba(106, 92, 255, 0.45);
+   }
+   
+   /* =========================
+      SONG INFO
+      ========================= */
+   .song-info {
+     text-align: center;
+   }
+   
+   .song-info h1 {
+     font-size: 1.15rem;
+     font-weight: 600;
+   }
+   
+   .song-info p {
+     margin-top: 6px;
+     font-size: 0.85rem;
+     color: #b3b3d1;
+   }
+   
+   /* =========================
+      PROGRESS BAR
+      ========================= */
+   .progress-section {
+     display: flex;
+     flex-direction: column;
+     gap: 8px;
+   }
+   
+   .progress-bar {
+     height: 6px;
+     background: #2a2a44;
+     border-radius: 999px;
+     overflow: hidden;
+   }
+   
+   .progress {
+     width: 42%;
+     height: 100%;
+     background: linear-gradient(90deg, #6a5cff, #9f8cff);
+   }
+   
+   .time {
+     display: flex;
+     justify-content: space-between;
+     font-size: 0.75rem;
+     color: #b3b3d1;
+   }
+   
+   /* =========================
+      CONTROLS
+      ========================= */
+   .controls {
+     display: flex;
+     justify-content: center;
+     gap: 28px;
+   }
+   
+   .control-btn {
+     width: 46px;
+     height: 46px;
+     border-radius: 50%;
+     border: none;
+     background: #2a2a44;
+     color: #ffffff;
+     font-size: 1.2rem;
+     cursor: pointer;
+     display: grid;
+     place-items: center;
+     transition: background 0.2s ease, transform 0.2s ease;
+   }
+   
+   .control-btn:hover {
+     background: #3a3a5c;
+     transform: translateY(-2px);
+   }
+   
+   .control-btn:active {
+     transform: scale(0.95);
+   }
+   
+   /* Play button emphasis */
+   .play-btn {
+     width: 58px;
+     height: 58px;
+     font-size: 1.4rem;
+     background: linear-gradient(135deg, #6a5cff, #9f8cff);
+     box-shadow: 0 12px 25px rgba(106, 92, 255, 0.6);
+   }
+   
+   .play-btn:hover {
+     background: linear-gradient(135deg, #7a6cff, #af9cff);
+   }
+   
+   /* =========================
+      VOLUME
+      ========================= */
+   .volume {
+     display: flex;
+     align-items: center;
+     gap: 12px;
+   }
+   
+   .volume-icon {
+     font-size: 1rem;
+   }
+   
+   .volume-bar {
+     flex: 1;
+     height: 6px;
+     background: #2a2a44;
+     border-radius: 999px;
+     overflow: hidden;
+   }
+   
+   .volume-level {
+     width: 65%;
+     height: 100%;
+     background: linear-gradient(90deg, #6a5cff, #9f8cff);
+   }
+   
+   /* =========================
+      RESPONSIVE
+      ========================= */
+   @media (max-width: 420px) {
+     .player {
+       width: 92%;
+     }
+   }
+   
