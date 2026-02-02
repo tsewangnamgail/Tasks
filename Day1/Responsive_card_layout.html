@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Responsive Profile Card</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* PROFILE CARD */
+        .card {
+            background: #fff;
+            width: 100%;
+            max-width: 350px;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            animation: fadeIn 1s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        /* IMAGE */
+        .card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid #764ba2;
+            margin-bottom: 15px;
+            transition: transform 0.4s ease;
+        }
+
+        .card:hover img {
+            transform: scale(1.1);
+        }
+
+        /* TEXT */
+        h1 {
+            font-size: 22px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        h3 {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        /* SKILLS */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .skills span {
+            background: #667eea;
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            transition: background 0.3s ease;
+        }
+
+        .skills span:hover {
+            background: #764ba2;
+        }
+
+        /* ANIMATION */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* TABLET */
+        @media (min-width: 600px) {
+            .card {
+                max-width: 400px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+        }
+
+        /* DESKTOP */
+        @media (min-width: 900px) {
+            .card {
+                max-width: 450px;
+            }
+
+            p {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAdVBMVEX///8AAAAXFxc+Pj7b29vy8vL7+/u7u7uRkZHm5uagoKCkpKSLi4v4+Pi1tbWbm5t5eXnGxsbU1NRERERwcHAQEBBpaWliYmK3t7dQUFCDg4Ovr68tLS1LS0s2Njbk5OQnJycbGxtkZGR1dXUqKirLy8vV1dUTaQOxAAAEAElEQVR4nO3di3aiMBAGYINQxRYRlLaI9659/0fclbbbajWEZGAmnv97gvwnQobcHAwAAAAAAAAAAAAAAAAAAAAAwD/xaLIo56v9al4uJqOYuznEomoRqHPBooq4m0XloSrVdWX1wN04AtH4RrwPY+87Up+vzsjdRCdZ0RhQqSLjbqa9Z4N8J8/cDbUUmnTgZzeG3I21MTLOdzLibm57j60CKvXI3eC20pYBlUq5m9xO2x70rhfbPYNfPHoWQ6uASnnzRn0wHybOBb6UqS+WAZV64W66GbuH8MMrd+ON2P5Gaz78Tp9cAqon7uY3S5wCKiX/e7H5g9DzTnTtQqUS7ggNKueEFXeEBkPnhHPuCHqxc0ClZE+lTggSTrhDaNkXbN9kl24EAZXiDqFj+9l0TvJH1CtJQsnlt1tN+kVyWWM6BawneYJ4TpJQ8pi/J0m4546hQRJQ9HBx/wmdJjD+K7hjaOxIEu64Y2hsSBIOuWNoHEgSHrhjaNx/TTMlSTjljqGRkyTMuWPokCTkDqF1a/dTGyV3CK32i9u/yV7u3hIk3HKH0Fs5B9xwR2hgs0XhnPQNC5FzQvGLT0vHgDPuAI1cO1F8Fw4GM6eAS+7mG3BbQZS+elhzKb+lLx5+WlsHlF2wfbN/2XjwmvlwtAx45G64ObvKRno1c8ZmOkPy5MUV7ddoJK/HXNW2evNhqL/QbnOUlydnshYBPT02E5kO/WtvxsFfzPaAeVKqXZc0f2nMvCi2NWJ9xpnsPV5movTW9NQq9fcBvBCOf+9ZHI4l7wyykGST5XqzC1Sw26yXk8yHLet27jcZAAAAAACAuySJwzwbfcqyYx5Gie8TNLUon6Zv5ebG7uhgU87SKvd0qiY6Ps6Ml0p3i3QU+/RtvK3e/piG+zlzs3z1oTuj6ZtFuG+LSnTKMKXYy76fCV3GyJc0xy1qh6m0qdTt+PJiRGcvknpySnNo7VIxlvFMxq6b9XRK/o4MKY5v6+x4F9/eKbauN0rZioG8l3wnPLcQbHvL90/R/0Eag9VdWvOeF+Pcb2lpr89NU7H7JS02gt5ORFGcjLHTTzdG3RQwZoY9lKsuF85R6HwTapclmpmOx8Y+x8Bbujx0Eu+509UWnQWkOHtHoqvdtjQ3CJHophffuWP91MXAKKgHT+gvHXY/WEiM/DCt+/FXYivigF3PVVig3fzO8bHUiHIiTtxDWKO8A0Xgb/SE7mUjaiT8ge6cjdAupLsjROZTeEI1qyHyRVqjuiSE5jbELlB9Y/BMrJmgumFRbkKqe8+QkA8SIiES8kNCJERCfkiIhEjIDwmREAn5ISESIiE/qoTzIpCpkPyPNAAAAAAAAAAAAAAAAAAAAAD36C87dEc+KQNq2gAAAABJRU5ErkJggg==" alt="Profile Picture">
+
+        <h1>Your Name</h1>
+        <h3>Web Developer Intern</h3>
+
+        <p>
+            Passionate about building clean, responsive, and user-friendly web
+            interfaces using HTML and CSS.
+        </p>
+
+        <div class="skills">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>Responsive Design</span>
+            <span>UI Basics</span>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Technical Event | College Fest</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* PAGE LAYOUT */
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        /* HEADER */
+        .event-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .event-header h1 {
+            font-size: 32px;
+            color: #002147;
+            margin-bottom: 10px;
+        }
+
+        .event-details {
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* DESCRIPTION */
+        .description {
+            margin-bottom: 30px;
+        }
+
+        .description h2 {
+            margin-bottom: 10px;
+            color: #002147;
+        }
+
+        /* TABLE */
+        h2 {
+            margin-bottom: 15px;
+            color: #002147;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        table thead {
+            background-color: #002147;
+            color: #ffffff;
+        }
+
+        table th, table td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        table tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        table tbody tr:hover {
+            background-color: #e6f0ff;
+        }
+
+        /* BUTTON */
+        .register {
+            text-align: center;
+        }
+
+        .register button {
+            background-color: #ffcc00;
+            color: #000;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .register button:hover {
+            background-color: #ffb700;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- EVENT HEADER -->
+        <div class="event-header">
+            <h1>Tech Innovators Summit 2026</h1>
+            <p class="event-details">
+                📅 Date: 15 February 2026 <br>
+                📍 Venue: Bannari Amman Institute of Technology Auditorium
+            </p>
+        </div>
+
+        <!-- EVENT DESCRIPTION -->
+        <div class="description">
+            <h2>About the Event</h2>
+            <p>
+                The Tech Innovators Summit 2026 is a one-day technical event organized
+                by the Department of Computer Science. The event aims to encourage
+                innovation, technical learning, and collaboration among students
+                through workshops, competitions, and expert talks.
+            </p>
+        </div>
+
+        <!-- SCHEDULE TABLE -->
+        <h2>Event Schedule</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Activity</th>
+                    <th>Venue</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>09:30 AM</td>
+                    <td>Inauguration Ceremony</td>
+                    <td>Main Hall</td>
+                </tr>
+                <tr>
+                    <td>10:30 AM</td>
+                    <td>Technical Workshop</td>
+                    <td>Lab 1</td>
+                </tr>
+                <tr>
+                    <td>01:00 PM</td>
+                    <td>Lunch Break</td>
+                    <td>Cafeteria</td>
+                </tr>
+                <tr>
+                    <td>02:00 PM</td>
+                    <td>Project Presentation</td>
+                    <td>Seminar Hall</td>
+                </tr>
+                <tr>
+                    <td>04:00 PM</td>
+                    <td>Valedictory & Awards</td>
+                    <td>Main Hall</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- REGISTER BUTTON -->
+        <div class="register">
+            <button>Register Now</button>
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Modal Popup</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f6f8;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* OPEN BUTTON */
+        .open-btn {
+            padding: 12px 25px;
+            background-color: #002147;
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .open-btn:hover {
+            background-color: #003a80;
+        }
+
+        /* OVERLAY */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s ease;
+        }
+
+        /* SHOW MODAL USING :target */
+        .modal:target {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* MODAL CONTENT */
+        .modal-content {
+            background-color: #ffffff;
+            width: 90%;
+            max-width: 400px;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+            transform: scale(0.7);
+            transition: transform 0.4s ease;
+        }
+
+        .modal:target .modal-content {
+            transform: scale(1);
+        }
+
+        /* CLOSE BUTTON */
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 22px;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .close:hover {
+            color: red;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+            color: #002147;
+        }
+
+        p {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- OPEN MODAL BUTTON -->
+    <a href="#popup" class="open-btn">Open Modal</a>
+
+    <!-- MODAL -->
+    <div id="popup" class="modal">
+        <div class="modal-content">
+            <a href="#" class="close">&times;</a>
+            <h2>Modal Popup Window</h2>
+            <p>
+                This is a modal popup window created using only HTML and CSS.
+                It appears at the center of the screen with a smooth animation
+                and dims the background content.
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
